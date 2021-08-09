@@ -17,18 +17,23 @@ using System.Windows.Shapes;
 namespace WebViewDemoApp
 {
     /// <summary>
-    /// Interaction logic for WebViewControl.xaml
+    /// Interaction logic for AppBrowserControl.xaml
     /// </summary>
-    public partial class WebViewControl : UserControl
+    public partial class AppBrowserControl : UserControl
     {
-        public WebViewControl()
+        public AppBrowserControl()
         {
             InitializeComponent();
+            this.Unloaded += AppBrowserControl_Unloaded;
         }
 
-        public void DisposeWebview()
+        public void AppBrowserControl_Unloaded(object sender, RoutedEventArgs e)
         {
-            this.webView.Dispose();
+            if (Browser != null)
+            {
+                Browser.Dispose();
+                Browser = null;
+            }
         }
     }
 }

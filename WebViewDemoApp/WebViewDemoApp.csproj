@@ -64,14 +64,14 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WebViewControl.xaml.cs">
-      <DependentUpon>WebViewControl.xaml</DependentUpon>
+    <Compile Include="AppBrowserControl.xaml.cs">
+      <DependentUpon>AppBrowserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WebViewWindow.cs">
+    <Compile Include="MDTPAppComponent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WebViewWindow.Designer.cs">
-      <DependentUpon>WebViewWindow.cs</DependentUpon>
+    <Compile Include="MDTPAppComponent.Designer.cs">
+      <DependentUpon>MDTPAppComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,8 +85,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="WebViewWindow.resx">
-      <DependentUpon>WebViewWindow.cs</DependentUpon>
+    <EmbeddedResource Include="MDTPAppComponent.resx">
+      <DependentUpon>MDTPAppComponent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -103,7 +103,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="WebViewControl.xaml">
+    <Page Include="AppBrowserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

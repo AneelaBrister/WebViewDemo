@@ -17,7 +17,7 @@ namespace WebViewDemoApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WebViewWindow());
+            Application.Run(new MDTPAppComponent());
         }
     }
 }
