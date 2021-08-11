@@ -18,6 +18,14 @@ namespace WebViewDemoApp
             InitializeComponent();
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            var view = new MainView();
+            view.DataContext = view;
+            elementHost1.Child = view;
+        }
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -37,7 +45,7 @@ namespace WebViewDemoApp
             if (elementHost1 != null)
             {
                 elementHost1.Dispose();
-                this.Controls.Remove(elementHost1);
+                this.tabPage1.Controls.Remove(elementHost1);
                 elementHost1 = null;
             }
         }
