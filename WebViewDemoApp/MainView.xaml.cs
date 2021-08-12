@@ -21,34 +21,9 @@ namespace WebViewDemoApp
     /// </summary>
     public partial class MainView : UserControl
     {
-        public ICommand PopoutCommand { get; private set; }
-
         public MainView()
         {
             InitializeComponent();
-            PopoutCommand = new MyPopoutCommand();
-        }
-
-        class MyPopoutCommand : ICommand
-        {
-            public MyPopoutCommand()
-            {
-            }
-
-            public void Execute(object parameter)
-            {
-                var view = new PopOutView();
-                view.DataContext = view;
-                view.ShowDialog();
-
-            }
-
-            public bool CanExecute(object parameter)
-            {
-                return true;  //what should we check for here???
-            }
-
-            public event EventHandler CanExecuteChanged;
         }
     }
 }

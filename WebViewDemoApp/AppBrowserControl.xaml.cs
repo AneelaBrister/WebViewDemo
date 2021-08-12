@@ -55,6 +55,7 @@ namespace WebViewDemoApp
             //}
             //else
             //{
+            Debug.WriteLine("Popout2");
             RaiseAppPopOutEvent();
             //}
 
@@ -73,6 +74,7 @@ namespace WebViewDemoApp
         void RaiseAppPopOutEvent()
         {
             var newEventArgs = new RoutedEventArgs(AppPopOutEvent);
+            Debug.WriteLine("Popout3");
             RaiseEvent((newEventArgs));
         }
     }

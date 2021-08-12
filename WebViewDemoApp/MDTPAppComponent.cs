@@ -22,7 +22,8 @@ namespace WebViewDemoApp
         {
             base.OnLoad(e);
             var view = new MainView();
-            view.DataContext = view;
+            var viewModel = new MainViewModel();
+            view.DataContext = viewModel;
             elementHost1.Child = view;
         }
 

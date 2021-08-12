@@ -69,10 +69,12 @@
       <DependentUpon>AppBrowserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppBrowserControlScriptHelper.cs" />
+    <Compile Include="AppViewModelBase.cs" />
     <Compile Include="EventBehaviorFactory.cs" />
     <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainViewModel.cs" />
     <Compile Include="MDTPAppComponent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +84,7 @@
     <Compile Include="PopOutView.xaml.cs">
       <DependentUpon>PopOutView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PopOutViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
