@@ -24,5 +24,26 @@ namespace WebViewDemoApp
         {
             InitializeComponent();
         }
+
+        private async void OnClose(object sender, RoutedEventArgs e)
+        {
+            Task<bool> thas = this.AppBrowser.HasUnsavedChanges();
+            bool has = await thas;
+            if (!has) this.Close();
+            else
+            {
+                var prompt =
+                       MessageBox.Show(
+                           "You have unsaved changes.  Are you sure you want to close and lose those changes?",
+                           "Unsaved Changes",
+                           MessageBoxButton.YesNo);
+
+                if (prompt == MessageBoxResult.Yes)
+                {
+                    this.Close();
+                }
+
+            }
+        }
     }
 }

@@ -90,7 +90,7 @@ namespace WebViewDemoApp
                     var view = new PopOutView();
                     var viewModel = new PopOutViewModel();
                     view.DataContext = viewModel;
-                    view.ShowDialog();
+                    view.Show();
 
                 }
                 catch (Exception ex)

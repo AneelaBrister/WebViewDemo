@@ -17,7 +17,6 @@ namespace WebViewDemoApp
         public ICommand TraceLogCommand { get; private set; }
         public ICommand AuthFailedCommand { get; private set; }
         public ICommand RefreshDataCommand { get; private set; }
-        public ICommand CloseCommand { get; protected set; }
         public ICommand ClosingCommand { get; protected set; }
         public ICommand WebAppOperationCommand { get; private set; }
         public ICommand PromptForVisitCommand { get; private set; }

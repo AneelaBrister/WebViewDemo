@@ -19,7 +19,7 @@
             <Grid Grid.Row="0" Background="#FF90A9C0" Grid.ColumnSpan="4">
                 <Label Grid.Column="0" Background="#FF90A9C0" Content=""/>
                 <StackPanel Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="Close" Width="50" Command="{Binding CloseCommand}" Margin="5" TabIndex="20" />
+                    <Button Content="Close" Width="50" Click="OnClose" Margin="5" TabIndex="20" />
                 </StackPanel>
             </Grid>
             <local:AppBrowserControl 

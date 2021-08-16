@@ -39,7 +39,19 @@ namespace WebViewDemoApp
             {
                 Browser.Dispose();
                 Browser = null;
+                Debug.WriteLine("made browser disposed");
             }
+        }
+
+        public async Task<bool> HasUnsavedChanges()
+        {
+            bool bret = false;
+            if (Browser != null)
+            {
+                string ret = await Browser.CoreWebView2.ExecuteScriptAsync("haveUnsavedChangesIn()");
+                bret = Boolean.Parse(ret);
+            }
+            return bret;
         }
 
         internal void PopOut()
