@@ -21,7 +21,10 @@ namespace WebViewDemoApp
         {
             base.OnLoad(e);
             var view = new MainView();
-            var viewModel = new MainViewModel();
+            CareVue parent = this.ParentForm as CareVue;
+            DataGridView traceLog = null;
+            if (parent != null) traceLog = parent.traceLogGrid;
+            var viewModel = new MainViewModel(traceLog);
             view.DataContext = viewModel;
             elementHost1.Child = view;
         }

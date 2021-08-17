@@ -17,6 +17,10 @@ namespace WebViewDemoApp
             InitializeComponent();
         }
 
+        public DataGridView traceLogGrid {
+            get { return this.dataGrid; }
+        }
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>

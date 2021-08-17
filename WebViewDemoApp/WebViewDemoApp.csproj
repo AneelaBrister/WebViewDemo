@@ -93,6 +93,8 @@
     <Compile Include="MDTPAppComponent.Designer.cs">
       <DependentUpon>MDTPAppComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="TraceLogEventArgs.cs" />
+    <Compile Include="TraceLogEventCommand.cs" />
     <EmbeddedResource Include="CareVue.resx">
       <DependentUpon>CareVue.cs</DependentUpon>
     </EmbeddedResource>

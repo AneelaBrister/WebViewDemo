@@ -17,6 +17,7 @@ namespace WebViewDemoApp
         private AppBrowserControl _browserControl;
         public AppBrowserControlScriptHelper(AppBrowserControl browserControl)
         {
+            Debug.WriteLine("ScriptHelper with " + browserControl.Name);
             this._browserControl = browserControl;
         }
 
@@ -25,6 +26,12 @@ namespace WebViewDemoApp
         {
             Debug.WriteLine("Popout1");
             this._browserControl.PopOut();
+        }
+
+        public void LogTrace(string type, string title, string message)
+        {
+            Debug.WriteLine("LogTrace1");
+            this._browserControl.LogTrace(type, title, message);
         }
     }
 }

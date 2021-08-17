@@ -73,6 +73,11 @@ namespace WebViewDemoApp
 
         }
 
+        internal void LogTrace(string type, string title, string message)
+        {
+            RaiseAppTraceEvent(type, title, message);
+        }
+
         //Pop Out
         public static readonly RoutedEvent AppPopOutEvent =
             EventManager.RegisterRoutedEvent("AppPopOut", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(AppBrowserControl));
@@ -87,6 +92,23 @@ namespace WebViewDemoApp
         {
             var newEventArgs = new RoutedEventArgs(AppPopOutEvent);
             Debug.WriteLine("Popout3");
+            RaiseEvent((newEventArgs));
+        }
+
+        //Trace Log
+        public static readonly RoutedEvent AppTraceEvent =
+            EventManager.RegisterRoutedEvent("AppTrace", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(AppBrowserControl));
+
+        public event RoutedEventHandler AppTrace
+        {
+            add { AddHandler(AppTraceEvent, value); }
+            remove { RemoveHandler(AppTraceEvent, value); }
+        }
+
+        void RaiseAppTraceEvent(string type, string title, string message)
+        {
+            var newEventArgs = new TraceLogEventArgs(AppTraceEvent, type, title, message);
+            Debug.WriteLine("LogTrace2 " + title);
             RaiseEvent((newEventArgs));
         }
     }

@@ -25,5 +25,21 @@ namespace WebViewDemoApp
         {
             return o.GetValue(PopoutCommand) as ICommand;
         }
+
+
+        public static readonly DependencyProperty TraceLogCommand = EventBehaviourFactory
+            .CreateCommandExecutionEventBehaviour
+            (AppBrowserControl.AppTraceEvent, "TraceLogCommand", typeof(AppBrowserBehavior));
+
+        public static void SetTraceLogCommand(DependencyObject o, ICommand value)
+        {
+            o.SetValue(TraceLogCommand, value);
+        }
+
+        public static ICommand GetTraceLogCommand(DependencyObject o)
+        {
+            return o.GetValue(TraceLogCommand) as ICommand;
+        }
+
     }
 }

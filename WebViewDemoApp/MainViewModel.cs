@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Automation.Peers;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace WebViewDemoApp
@@ -14,10 +15,10 @@ namespace WebViewDemoApp
         public ICommand PopoutCommand { get; private set; }
         public ICommand LaunchExternalCommand { get; private set; }
 
-        public MainViewModel()
-            : base(false)
+        public MainViewModel(DataGridView traceLog)
+            : base(false, traceLog)
         {
-            PopoutCommand = new MyPopoutCommand(this);
+            PopoutCommand = new MyPopoutCommand(this, traceLog);
             LaunchExternalCommand = new MyLaunchExternalCommand(this);
 
         }
@@ -68,11 +69,13 @@ namespace WebViewDemoApp
         {
             //private readonly ICommandExecutor _cmdExec;
             private readonly MainViewModel _vm;
+            private DataGridView _traceLog;
 
-            public MyPopoutCommand(MainViewModel vm)
+            public MyPopoutCommand(MainViewModel vm, DataGridView traceLog)
             {
                 //_cmdExec = cmdExec;
                 _vm = vm;
+                _traceLog = traceLog;
             }
 
             public void Execute(object parameter)
@@ -88,14 +91,14 @@ namespace WebViewDemoApp
                     //});
                     Debug.WriteLine("Popout4");
                     var view = new PopOutView();
-                    var viewModel = new PopOutViewModel();
+                    var viewModel = new PopOutViewModel(_traceLog);
                     view.DataContext = viewModel;
                     view.Show();
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    System.Windows.MessageBox.Show(ex.Message);
                 }
             }
 

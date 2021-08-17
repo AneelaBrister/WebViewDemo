@@ -24,7 +24,8 @@
             </Grid>
             <local:AppBrowserControl 
 				x:Name="AppBrowser" 
-				 Grid.Row="1" />
+				Grid.Row="1" 
+                local:AppBrowserBehavior.TraceLogCommand="{Binding TraceLogCommand}"/>
         </Grid>
     </Grid>
 </Window>
