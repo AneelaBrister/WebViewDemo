@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace WebViewDemoApp
 {
-    public partial class MDTPAppComponent : UserControl
+    public partial class CareVue : Form
     {
-        public MDTPAppComponent()
+        public CareVue()
         {
             InitializeComponent();
-        }
-
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            var view = new MainView();
-            var viewModel = new MainViewModel();
-            view.DataContext = viewModel;
-            elementHost1.Child = view;
         }
 
         /// <summary>
@@ -42,13 +33,12 @@ namespace WebViewDemoApp
 
         private void DisposeChildren()
         {
-            if (elementHost1 != null)
+            if (mdtpAppComponent != null)
             {
-                elementHost1.Dispose();
-                this.Controls.Remove(elementHost1);
-                elementHost1 = null;
+                mdtpAppComponent.Dispose();
+                this.Controls.Remove(mdtpAppComponent);
+                mdtpAppComponent = null;
             }
         }
     }
-
 }
