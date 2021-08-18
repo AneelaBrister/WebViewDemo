@@ -77,6 +77,13 @@
       <DependentUpon>CareVue.cs</DependentUpon>
     </Compile>
     <Compile Include="EventBehaviorFactory.cs" />
+    <Compile Include="WindowHandler.cs" />
+    <Compile Include="Locked.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Locked.Designer.cs">
+      <DependentUpon>Locked.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
@@ -97,6 +104,9 @@
     <Compile Include="TraceLogEventCommand.cs" />
     <EmbeddedResource Include="CareVue.resx">
       <DependentUpon>CareVue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locked.resx">
+      <DependentUpon>Locked.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDTPAppComponent.resx">
       <DependentUpon>MDTPAppComponent.cs</DependentUpon>

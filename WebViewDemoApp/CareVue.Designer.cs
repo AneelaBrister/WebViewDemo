@@ -17,14 +17,15 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.mdtpAppComponent = new WebViewDemoApp.MDTPAppComponent();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGrid = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mdtpAppComponent = new WebViewDemoApp.MDTPAppComponent();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Message = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -54,6 +55,14 @@
             this.tabPage1.Text = "MDTP App";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // mdtpAppComponent
+            // 
+            this.mdtpAppComponent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mdtpAppComponent.Location = new System.Drawing.Point(3, 3);
+            this.mdtpAppComponent.Name = "mdtpAppComponent";
+            this.mdtpAppComponent.Size = new System.Drawing.Size(1170, 657);
+            this.mdtpAppComponent.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGrid);
@@ -78,35 +87,6 @@
             this.dataGrid.Size = new System.Drawing.Size(1170, 657);
             this.dataGrid.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1184, 66);
-            this.panel1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(434, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(288, 43);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Patient Chart";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // mdtpAppComponent
-            // 
-            this.mdtpAppComponent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mdtpAppComponent.Location = new System.Drawing.Point(3, 3);
-            this.mdtpAppComponent.Name = "mdtpAppComponent";
-            this.mdtpAppComponent.Size = new System.Drawing.Size(1170, 657);
-            this.mdtpAppComponent.TabIndex = 0;
-            // 
             // Type
             // 
             this.Type.HeaderText = "Type";
@@ -127,6 +107,38 @@
             this.Message.Name = "Message";
             this.Message.ReadOnly = true;
             this.Message.Width = 1000;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1184, 66);
+            this.panel1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(434, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(288, 43);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Patient Chart";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1080, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Lock CareVue";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // CareVue
             // 
@@ -158,5 +170,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Message;
+        private System.Windows.Forms.Button button1;
     }
 }
