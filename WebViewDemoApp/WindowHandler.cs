@@ -36,6 +36,17 @@ namespace WebViewDemoApp
 
         public const int SW_HIDE = 0;
         public const int SW_SHOW = 5;
+        public const int WH_KEYBOARD = 2;
+        public const int WH_MOUSE = 7;
 
+        public delegate int HookProc(int code, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll", EntryPoint = "SetWindowsHookEx", SetLastError = true)]
+        public static extern IntPtr SetWindowsHookEx(int idHook, HookProc lpfn, IntPtr hMod, uint dwThreadId);
+        [DllImport("user32.dll")]
+        public static extern int CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
+        [DllImport("user32.dll")]
+        public static extern int UnhookWindowsHookEx(IntPtr hhk);
+        
     }
 }

@@ -13,9 +13,11 @@ namespace WebViewDemoApp
 {
     public partial class CareVue : Form
     {
+        IdleHelper _idleHelper;
         public CareVue()
         {
             InitializeComponent();
+            _idleHelper = new IdleHelper();
         }
 
         public DataGridView traceLogGrid {
@@ -48,29 +50,7 @@ namespace WebViewDemoApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var callback = new WindowHandler.EnumThreadWindowsProc(HideWindows);
-            var tid = AppDomain.GetCurrentThreadId();
-            WindowHandler.EnumThreadWindows((uint)tid, callback, 0);
-
-            Locked locked = new Locked();
-            locked.Show();
-        }
-
-        private static bool HideWindows(IntPtr handle, int param)
-        {
-            if (WindowHandler.IsWindowVisible(handle))
-            {
-                var length = WindowHandler.GetWindowTextLength(handle);
-                var caption = new StringBuilder(length + 1);
-                WindowHandler.GetWindowText(handle, caption, caption.Capacity);
-
-                if (caption.ToString() == "CareVue" || caption.ToString() == "PopOut")
-                {
-                    Console.WriteLine("Hiding a visible window: {0}", caption);
-                    WindowHandler.ShowWindow(handle.ToInt32(), WindowHandler.SW_HIDE);
-                }
-            }
-            return true;
+            _idleHelper.Lock();
         }
     }
 }

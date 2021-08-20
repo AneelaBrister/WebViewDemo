@@ -77,6 +77,7 @@
       <DependentUpon>CareVue.cs</DependentUpon>
     </Compile>
     <Compile Include="EventBehaviorFactory.cs" />
+    <Compile Include="IdleHelper.cs" />
     <Compile Include="WindowHandler.cs" />
     <Compile Include="Locked.cs">
       <SubType>Form</SubType>
